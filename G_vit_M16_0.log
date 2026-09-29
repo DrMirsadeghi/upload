@@ -1,0 +1,89 @@
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+  Running command git clone --filter=blob:none --quiet https://github.com/Harry24k/MAIR.git /tmp/pip-req-build-8arq0drx
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+========================================
+Ground-control evaluation
+Architecture: vit
+Bottleneck:   16
+Run:          0
+Array job:    985130
+Task:         0
+========================================
+/gpfs/mariana/home/semirs/.local/lib/python3.9/site-packages/torch/nn/modules/transformer.py:392: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+Running evaluation on vit with bottleneck width 16
+Running evaluation on vit with bottleneck width 16 run 0
+Checkpoint architecture: vit
+Checkpoint bottleneck: 16
+Checkpoint test accuracy: 0.671
+
+============================================================
+InterpBench Numerical Diagnostics
+============================================================
+[MODEL FINITENESS] before evaluation | all parameters and buffers finite.
+[CLEAN PROBE] input finite | logits finite.
+[MODEL FINITENESS] after clean accuracy evaluation | all parameters and buffers finite.
+[MODEL FINITENESS] after robustness evaluation | all parameters and buffers finite.
+
+[PASS 1 / SCALER SUMMARY]
+  Batches:              24
+  Valid:                24
+  Discarded:            0
+  Successful examples:  2957
+
+[SCALER FINALIZATION]
+[MODEL FINITENESS] after PASS 1 / SCALER | all parameters and buffers finite.
+
+[PASS 2 / PCA SUMMARY]
+  Batches:              24
+  Valid:                24
+  Discarded:            0
+  Successful examples:  2959
+
+[PCA FINALIZATION]
+[MODEL FINITENESS] after PASS 2 / PCA | all parameters and buffers finite.
+
+[PASS 3 / GEOMETRY SUMMARY]
+  Batches:              24
+  Valid:                24
+  Discarded:            0
+  Successful examples:  2963
+[MODEL FINITENESS] after PASS 3 | all parameters and buffers finite.
+
+[ACTIVATION SUMMARY]
+  No non-finite activations detected.
+
+[SCALER SAMPLE SUMMARY]
+  feat0     samples=2957    finalized=True
+  feat1     samples=2957    finalized=True
+
+[PCA SAMPLE SUMMARY]
+  feat0     samples=2959    fitted=True
+  feat1     samples=2959    fitted=True
+
+Numerical Diagnosis Summary
+------------------------------------------------------------
+Initial non-finite parameters: 0
+Initial non-finite buffers:     0
+Final non-finite parameters:   0
+Final non-finite buffers:       0
+
+[DIAGNOSIS] No parameter, buffer, logit, or activation non-finites were detected by evaluation.
+
+Interpretability Statistics
+------------------------------------------------------------------------------------------------------------------------
+Layer                    Interp Score             PCA Variance      Scaler Samples       PCA Samples
+------------------------------------------------------------------------------------------------------------------------
