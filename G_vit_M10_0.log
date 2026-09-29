@@ -1,0 +1,150 @@
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+  Running command git clone --filter=blob:none --quiet https://github.com/Harry24k/MAIR.git /tmp/pip-req-build-oij2pt_p
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+========================================
+Ground-control evaluation
+Architecture: vit
+Bottleneck:   10
+Run:          0
+Array job:    985114
+Task:         0
+========================================
+/gpfs/mariana/home/semirs/.local/lib/python3.9/site-packages/torch/nn/modules/transformer.py:392: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+Running evaluation on vit with bottleneck width 10
+Running evaluation on vit with bottleneck width 10 run 0
+Checkpoint architecture: vit
+Checkpoint bottleneck: 10
+Checkpoint test accuracy: 0.6813333333333333
+
+============================================================
+InterpBench Numerical Diagnostics
+============================================================
+[MODEL FINITENESS] before evaluation | all parameters and buffers finite.
+[CLEAN PROBE] input finite | logits finite.
+[MODEL FINITENESS] after clean accuracy evaluation | all parameters and buffers finite.
+[MODEL FINITENESS] after robustness evaluation | all parameters and buffers finite.
+
+[PASS 1 / SCALER SUMMARY]
+  Batches:              24
+  Valid:                24
+  Discarded:            0
+  Successful examples:  2971
+
+[SCALER FINALIZATION]
+[MODEL FINITENESS] after PASS 1 / SCALER | all parameters and buffers finite.
+
+[PASS 2 / PCA SUMMARY]
+  Batches:              24
+  Valid:                24
+  Discarded:            0
+  Successful examples:  2969
+
+[PCA FINALIZATION]
+[MODEL FINITENESS] after PASS 2 / PCA | all parameters and buffers finite.
+
+[PASS 3 / GEOMETRY SUMMARY]
+  Batches:              24
+  Valid:                24
+  Discarded:            0
+  Successful examples:  2969
+[MODEL FINITENESS] after PASS 3 | all parameters and buffers finite.
+
+[ACTIVATION SUMMARY]
+  No non-finite activations detected.
+
+[SCALER SAMPLE SUMMARY]
+  feat0     samples=2971    finalized=True
+  feat1     samples=2971    finalized=True
+
+[PCA SAMPLE SUMMARY]
+  feat0     samples=2969    fitted=True
+  feat1     samples=2969    fitted=True
+
+Numerical Diagnosis Summary
+------------------------------------------------------------
+Initial non-finite parameters: 0
+Initial non-finite buffers:     0
+Final non-finite parameters:   0
+Final non-finite buffers:       0
+
+[DIAGNOSIS] No parameter, buffer, logit, or activation non-finites were detected by evaluation.
+
+Interpretability Statistics
+------------------------------------------------------------------------------------------------------------------------
+Layer                    Interp Score             PCA Variance      Scaler Samples       PCA Samples
+------------------------------------------------------------------------------------------------------------------------
+feat0                    6.271442e-01                  100.00%                2971              2969
+feat1                    6.264275e-01                  100.00%                2971              2969
+------------------------------------------------------------------------------------------------------------------------
+Report(1 snapshots, 1 histories, accuracy=31.833333333333332, fgsm=4.3, pgd=0.8333333333333334, score=0.6267858192920418, integral=0.6267858192920418)
+
+Saved report to vit_M10_run0_SYNTH_STANDARD_0.report
+
+
+================================================================================
+STARTING INDEPENDENT BOTTLENECK ANALYSIS
+================================================================================
+
+Collected bottleneck activations:
+  Samples:      3000
+  Bottleneck M:  10
+  Factors K:     6
+
+================================================================================
+LATENT → GROUND-TRUTH FACTOR MAP
+================================================================================
+latent_00 → color        score=0.5283
+    color=0.528, size=0.375, position_x=0.350, position_y=0.343, shape=0.290, rotation=0.218
+latent_01 → color        score=0.6317
+    color=0.632, position_y=0.368, size=0.338, position_x=0.332, shape=0.268, rotation=0.260
+latent_02 → position_y   score=0.4050
+    position_y=0.405, color=0.350, size=0.335, position_x=0.335, rotation=0.288, shape=0.285
+latent_03 → color        score=0.4267
+    color=0.427, position_y=0.420, size=0.338, position_x=0.335, rotation=0.272, shape=0.265
+latent_04 → color        score=0.7467
+    color=0.747, position_x=0.348, size=0.348, position_y=0.333, shape=0.268, rotation=0.235
+latent_05 → color        score=0.8050
+    color=0.805, position_y=0.362, size=0.338, position_x=0.323, rotation=0.253, shape=0.227
+latent_06 → color        score=0.5567
+    color=0.557, size=0.322, position_y=0.300, position_x=0.298, rotation=0.265, shape=0.262
+latent_07 → color        score=0.5417
+    color=0.542, position_y=0.380, size=0.353, position_x=0.352, rotation=0.275, shape=0.262
+latent_08 → color        score=0.7567
+    color=0.757, position_y=0.328, position_x=0.323, size=0.317, rotation=0.258, shape=0.243
+latent_09 → color        score=0.4967
+    color=0.497, position_y=0.373, position_x=0.350, size=0.318, shape=0.257, rotation=0.255
+
+================================================================================
+ORACLE RESULTS
+================================================================================
+Oracle interpretability: 0.418333
+Mean monosemanticity:     0.273503
+Superposition index:      0.726497
+
+Optimal latent → factor matching:
+  latent_00 → size         (0.3750)
+  latent_02 → shape        (0.2850)
+  latent_03 → position_y   (0.4200)
+  latent_05 → color        (0.8050)
+  latent_07 → rotation     (0.2750)
+  latent_09 → position_x   (0.3500)
+
+Saved oracle analysis to vit_M10_run0_oracle.npz
+
+================================================================================
+COMPLETE
+================================================================================
