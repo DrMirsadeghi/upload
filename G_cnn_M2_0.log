@@ -1,0 +1,128 @@
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+  Running command git clone --filter=blob:none --quiet https://github.com/Harry24k/MAIR.git /tmp/pip-req-build-lprjhihd
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+
+[notice] A new release of pip is available: 23.1.2 -> 26.0.1
+[notice] To update, run: python -m pip install --upgrade pip
+========================================
+Ground-control evaluation
+Architecture: cnn
+Bottleneck:   2
+Run:          0
+Array job:    984933
+Task:         0
+========================================
+Running evaluation on cnn with bottleneck width 2
+Running evaluation on cnn with bottleneck width 2 run 0
+Checkpoint architecture: cnn
+Checkpoint bottleneck: 2
+Checkpoint test accuracy: 0.5796666666666667
+
+============================================================
+InterpBench Numerical Diagnostics
+============================================================
+[MODEL FINITENESS] before evaluation | all parameters and buffers finite.
+[CLEAN PROBE] input finite | logits finite.
+[MODEL FINITENESS] after clean accuracy evaluation | all parameters and buffers finite.
+[MODEL FINITENESS] after robustness evaluation | all parameters and buffers finite.
+
+[PASS 1 / SCALER SUMMARY]
+  Batches:              24
+  Valid:                24
+  Discarded:            0
+  Successful examples:  2733
+
+[SCALER FINALIZATION]
+[MODEL FINITENESS] after PASS 1 / SCALER | all parameters and buffers finite.
+
+[PASS 2 / PCA SUMMARY]
+  Batches:              24
+  Valid:                24
+  Discarded:            0
+  Successful examples:  2726
+
+[PCA FINALIZATION]
+[MODEL FINITENESS] after PASS 2 / PCA | all parameters and buffers finite.
+
+[PASS 3 / GEOMETRY SUMMARY]
+  Batches:              24
+  Valid:                24
+  Discarded:            0
+  Successful examples:  2728
+[MODEL FINITENESS] after PASS 3 | all parameters and buffers finite.
+
+[ACTIVATION SUMMARY]
+  No non-finite activations detected.
+
+[SCALER SAMPLE SUMMARY]
+  feat0     samples=2733    finalized=True
+  feat1     samples=2733    finalized=True
+
+[PCA SAMPLE SUMMARY]
+  feat0     samples=2726    fitted=True
+  feat1     samples=2726    fitted=True
+
+Numerical Diagnosis Summary
+------------------------------------------------------------
+Initial non-finite parameters: 0
+Initial non-finite buffers:     0
+Final non-finite parameters:   0
+Final non-finite buffers:       0
+
+[DIAGNOSIS] No parameter, buffer, logit, or activation non-finites were detected by evaluation.
+
+Interpretability Statistics
+------------------------------------------------------------------------------------------------------------------------
+Layer                    Interp Score             PCA Variance      Scaler Samples       PCA Samples
+------------------------------------------------------------------------------------------------------------------------
+feat0                    1.973276e-02                  100.00%                2733              2726
+feat1                    7.713122e-01                  100.00%                2733              2726
+------------------------------------------------------------------------------------------------------------------------
+Report(1 snapshots, 1 histories, accuracy=25.833333333333332, fgsm=12.766666666666667, pgd=9.166666666666666, score=0.3955225018640717, integral=0.3955225018640717)
+
+Saved report to cnn_M2_run0_SYNTH_STANDARD_0.report
+
+
+================================================================================
+STARTING INDEPENDENT BOTTLENECK ANALYSIS
+================================================================================
+
+Collected bottleneck activations:
+  Samples:      3000
+  Bottleneck M:  2
+  Factors K:     6
+
+================================================================================
+LATENT → GROUND-TRUTH FACTOR MAP
+================================================================================
+latent_00 → color        score=0.8817
+    color=0.882, size=0.443, position_x=0.363, position_y=0.315, shape=0.250, rotation=0.248
+latent_01 → color        score=0.6967
+    color=0.697, size=0.455, position_x=0.323, position_y=0.300, rotation=0.243, shape=0.237
+
+================================================================================
+ORACLE RESULTS
+================================================================================
+Oracle interpretability: 0.668333
+Mean monosemanticity:     0.330687
+Superposition index:      0.669313
+
+Optimal latent → factor matching:
+  latent_00 → color        (0.8817)
+  latent_01 → size         (0.4550)
+
+Saved oracle analysis to cnn_M2_run0_oracle.npz
+
+================================================================================
+COMPLETE
+================================================================================
